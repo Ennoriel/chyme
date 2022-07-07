@@ -1,0 +1,40 @@
+{
+	"name": "chyme",
+	"version": "1.0.0",
+	"description": "typescript utils",
+	"main": "dist/index.js",
+	"scripts": {
+		"build": "rollup -c",
+		"lint": "eslint --ignore-path .gitignore .",
+		"format": "prettier --write --plugin-search-dir=. .",
+		"test": "jest"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+ssh://git@github.com/Ennoriel/chyme.git"
+	},
+	"keywords": [
+		"typescript"
+	],
+	"author": "Maxime Dupont",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/Ennoriel/chyme/issues"
+	},
+	"homepage": "https://github.com/Ennoriel/chyme",
+	"devDependencies": {
+		"@rollup/plugin-typescript": "^8.3.3",
+		"@types/jest": "^28.1.4",
+		"@typescript-eslint/eslint-plugin": "^5.30.5",
+		"@typescript-eslint/parser": "^5.30.5",
+		"eslint": "^8.19.0",
+		"eslint-config-prettier": "^8.5.0",
+		"jest": "^28.1.2",
+		"prettier": "^2.7.1",
+		"rollup": "^2.75.7",
+		"rollup-plugin-dts": "^4.2.2",
+		"ts-jest": "^28.0.5",
+		"tslib": "^2.4.0",
+		"typescript": "^4.7.4"
+	}
+}
