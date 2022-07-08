@@ -24,6 +24,7 @@ export default [
 			{
 				file: 'dist/iife.js',
 				format: 'iife',
+				name: 'chyme',
 				sourcemap: true
 			},
 			{
