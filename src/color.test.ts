@@ -73,19 +73,33 @@ describe('color', () => {
 	it('colorRange', () => {
 		expect(colorRange('#ff3eff', '#234567', 14)).toStrictEqual([
 			'#ff3effff',
-			'#e03df4ff',
-			'#c43be9ff',
-			'#a93adeff',
-			'#9139d3ff',
-			'#7b37c8ff',
-			'#6636bdff',
-			'#5334b3ff',
-			'#4332a8ff',
-			'#33309dff',
-			'#2d3492ff',
-			'#2b3b87ff',
-			'#28407cff',
-			'#254371ff'
+			'#de3cf3ff',
+			'#bf3be7ff',
+			'#a43adbff',
+			'#8a38d0ff',
+			'#7237c4ff',
+			'#5d35b8ff',
+			'#4a33adff',
+			'#3930a1ff',
+			'#2e3295ff',
+			'#2b3a8aff',
+			'#29407eff',
+			'#264372ff',
+			'#234567ff'
+		]);
+	});
+	it('colorRange alpha', () => {
+		expect(colorRange('#ff000000', '#0000ffff', 3)).toStrictEqual([
+			'#ff000000',
+			'#ff00ff80',
+			'#0000ffff'
+		]);
+	});
+	it('colorRange hue', () => {
+		expect(colorRange('#ffff00ff', '#ff00ffff', 3)).toStrictEqual([
+			'#ffff00ff',
+			'#ff0000ff',
+			'#ff00ffff'
 		]);
 	});
 });

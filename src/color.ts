@@ -18,6 +18,7 @@ export function randomHexColor() {
  * Convert HSV representation to RGB HEX string
  */
 export function hsv2rgb({ h, s, v, a = 1 }: Hsv): Rgb {
+	console.log('hsv2rgb', a);
 	let R: number, G: number, B: number;
 	let _h = (h % 360) / 60;
 
@@ -125,19 +126,26 @@ export function hex2Color({ hex }: Hex): Color {
 export function colorRange(startHex: string, endHex: string, length: number) {
 	if (!startHex || !endHex || !length || length <= 1) return undefined;
 
+	const rangeLength = length - 1;
 	const startColor = hex2Color({ hex: startHex });
 	const endColor = hex2Color({ hex: endHex });
 
-	return range(0, length - 1).map(
+	// if hue delta is higher that 180°, go the other way around
+	if (Math.abs(startColor.h - endColor.h) > 180) {
+		if (startColor.h < endColor.h) startColor.h += 360;
+		else endColor.h += 360;
+	}
+
+	return range(0, rangeLength).map(
 		(index) =>
 			hsv2Color({
-				h: startColor.h + ((endColor.h - startColor.h) * index) / length,
-				s: startColor.s + ((endColor.s - startColor.s) * index) / length,
-				v: startColor.v + ((endColor.v - startColor.v) * index) / length,
+				h: (startColor.h + ((endColor.h - startColor.h) * index) / rangeLength) % 360,
+				s: startColor.s + ((endColor.s - startColor.s) * index) / rangeLength,
+				v: startColor.v + ((endColor.v - startColor.v) * index) / rangeLength,
 				a:
-					startColor.a &&
-					endColor.a &&
-					startColor.a + ((endColor.a - startColor.a) * index) / length
+					startColor.a === undefined || endColor.a === undefined
+						? 1
+						: startColor.a + ((endColor.a - startColor.a) * index) / rangeLength
 			}).hex
 	);
 }
