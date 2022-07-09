@@ -1,4 +1,4 @@
-import { hex2Color, hsv2Color, randomHexColor, rgb2Color } from './index';
+import { colorRange, hex2Color, hsv2Color, randomHexColor, rgb2Color } from './index';
 
 describe('color', () => {
 	it('randomHexColor', () => {
@@ -68,5 +68,24 @@ describe('color', () => {
 			g: 191,
 			b: 205
 		});
+	});
+
+	it('colorRange', () => {
+		expect(colorRange('#ff3eff', '#234567', 14)).toStrictEqual([
+			'#ff3effff',
+			'#e03df4ff',
+			'#c43be9ff',
+			'#a93adeff',
+			'#9139d3ff',
+			'#7b37c8ff',
+			'#6636bdff',
+			'#5334b3ff',
+			'#4332a8ff',
+			'#33309dff',
+			'#2d3492ff',
+			'#2b3b87ff',
+			'#28407cff',
+			'#254371ff'
+		]);
 	});
 });

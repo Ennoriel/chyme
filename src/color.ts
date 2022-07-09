@@ -1,4 +1,5 @@
 import type { Hsv, Rgb, Hex, Color } from './color.types';
+import { range } from './array';
 
 /**
  * Generates a random hexadecimal color
@@ -121,4 +122,22 @@ export function hex2Color({ hex }: Hex): Color {
 	};
 }
 
-export default { hsv2Color, rgb2Color, hex2Color };
+export function colorRange(startHex: string, endHex: string, length: number) {
+	if (!startHex || !endHex || !length || length <= 1) return undefined;
+
+	const startColor = hex2Color({ hex: startHex });
+	const endColor = hex2Color({ hex: endHex });
+
+	return range(0, length - 1).map(
+		(index) =>
+			hsv2Color({
+				h: startColor.h + ((endColor.h - startColor.h) * index) / length,
+				s: startColor.s + ((endColor.s - startColor.s) * index) / length,
+				v: startColor.v + ((endColor.v - startColor.v) * index) / length,
+				a:
+					startColor.a &&
+					endColor.a &&
+					startColor.a + ((endColor.a - startColor.a) * index) / length
+			}).hex
+	);
+}
