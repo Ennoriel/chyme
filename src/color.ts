@@ -18,7 +18,6 @@ export function randomHexColor() {
  * Convert HSV representation to RGB HEX string
  */
 export function hsv2rgb({ h, s, v, a = 1 }: Hsv): Rgb {
-	console.log('hsv2rgb', a);
 	let R: number, G: number, B: number;
 	let _h = (h % 360) / 60;
 
