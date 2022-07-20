@@ -1,34 +1,24 @@
 import typescript from '@rollup/plugin-typescript';
 import dts from 'rollup-plugin-dts';
+import pkg from './package.json';
 
 export default [
 	{
 		input: 'src/index.ts',
 		output: [
 			{
-				file: 'dist/cjs.js',
+				file: pkg.main,
 				format: 'cjs',
 				sourcemap: true
 			},
 			{
-				file: 'dist/amd.js',
-				format: 'amd',
-				sourcemap: true
-			},
-			{
-				file: 'dist/umd.js',
+				file: pkg.browser,
 				format: 'umd',
 				name: 'chyme',
 				sourcemap: true
 			},
 			{
-				file: 'dist/iife.js',
-				format: 'iife',
-				name: 'chyme',
-				sourcemap: true
-			},
-			{
-				file: 'dist/index.js',
+				file: pkg.module,
 				format: 'es',
 				sourcemap: true
 			}
@@ -38,7 +28,7 @@ export default [
 	{
 		input: 'src/index.ts',
 		output: {
-			file: 'dist/types.d.ts',
+			file: pkg.types,
 			format: 'es'
 		},
 		plugins: [dts()]

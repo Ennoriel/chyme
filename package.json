@@ -1,8 +1,10 @@
 {
 	"name": "chyme",
-	"version": "1.1.5",
+	"version": "1.2.0",
 	"description": "typescript utils",
-	"main": "dist/index.js",
+	"main": "dist/cjs.js",
+	"module": "dist/esm.js",
+	"browser": "dist/umd.js",
 	"types": "dist/types.d.ts",
 	"scripts": {
 		"build": "rollup -c",
