@@ -24,7 +24,7 @@ describe('color', () => {
 			s: 0.6731707317073171,
 			v: 0.803921568627451,
 			a: 1,
-			hex: '#43bfcdff',
+			hex: '#43bfcd',
 			r: 67,
 			g: 191,
 			b: 205
@@ -50,7 +50,7 @@ describe('color', () => {
 			s: 0.67,
 			v: 0.8,
 			a: 1,
-			hex: '#43beccff',
+			hex: '#43becc',
 			r: 67,
 			g: 190,
 			b: 204
@@ -72,34 +72,34 @@ describe('color', () => {
 
 	it('colorRange', () => {
 		expect(colorRange('#ff3eff', '#234567', 14)).toStrictEqual([
-			'#ff3effff',
-			'#de3cf3ff',
-			'#bf3be7ff',
-			'#a43adbff',
-			'#8a38d0ff',
-			'#7237c4ff',
-			'#5d35b8ff',
-			'#4a33adff',
-			'#3930a1ff',
-			'#2e3295ff',
-			'#2b3a8aff',
-			'#29407eff',
-			'#264372ff',
-			'#234567ff'
+			'#ff3eff',
+			'#de3cf3',
+			'#bf3be7',
+			'#a43adb',
+			'#8a38d0',
+			'#7237c4',
+			'#5d35b8',
+			'#4a33ad',
+			'#3930a1',
+			'#2e3295',
+			'#2b3a8a',
+			'#29407e',
+			'#264372',
+			'#234567'
 		]);
 	});
 	it('colorRange alpha', () => {
 		expect(colorRange('#ff000000', '#0000ffff', 3)).toStrictEqual([
 			'#ff000000',
 			'#ff00ff80',
-			'#0000ffff'
+			'#0000ff'
 		]);
 	});
 	it('colorRange hue', () => {
 		expect(colorRange('#ffff00ff', '#ff00ffff', 3)).toStrictEqual([
-			'#ffff00ff',
-			'#ff0000ff',
-			'#ff00ffff'
+			'#ffff00',
+			'#ff0000',
+			'#ff00ff'
 		]);
 	});
 });

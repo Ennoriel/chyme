@@ -23,7 +23,7 @@ export function floor(value: number, base: number) {
  * @param value Numeric value to floor
  */
 export function floor2(value: number) {
-	return floor(value, 2)
+	return floor(value, 2);
 }
 
 /**
@@ -31,5 +31,5 @@ export function floor2(value: number) {
  * @param value Numeric value to floor
  */
 export function floor3(value: number) {
-	return floor(value, 3)
+	return floor(value, 3);
 }

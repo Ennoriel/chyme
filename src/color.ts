@@ -40,13 +40,10 @@ export function hsv2rgb({ h, s, v, a = 1 }: Hsv): Rgb {
  * Converts RGB representation to HEX representation
  */
 export function rgb2hex({ r, g, b, a = 1 }: Rgb): Hex {
+	const _a = Math.round(a * 255) | 0;
+	const colors = _a === 255 ? [r, g, b] : [r, g, b, _a];
 	return {
-		hex:
-			'#' +
-			[r, g, b, Math.round(a * 255) | 0].reduce(
-				(acc, v) => `${acc}${v.toString(16).padStart(2, '0')}`,
-				''
-			)
+		hex: '#' + colors.reduce((acc, v) => `${acc}${v.toString(16).padStart(2, '0')}`, '')
 	};
 }
 

@@ -1,4 +1,4 @@
-import {clamp, floor, floor2, floor3} from './number';
+import { clamp, floor, floor2, floor3 } from './number';
 
 describe('number', () => {
 	it('clamp', () => {
