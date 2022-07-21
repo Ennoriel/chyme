@@ -30,9 +30,9 @@ export function hsv2rgb({ h, s, v, a = 1 }: Hsv): Rgb {
 	G += [X, C, C, X, 0, 0][_h] as number;
 	B += [0, 0, X, C, C, X][_h] as number;
 
-	const r = Math.floor(R * 255);
-	const g = Math.floor(G * 255);
-	const b = Math.floor(B * 255);
+	const r = Math.round(R * 255);
+	const g = Math.round(G * 255);
+	const b = Math.round(B * 255);
 	return { r, g, b, a };
 }
 

@@ -33,3 +33,15 @@ export function floor2(value: number) {
 export function floor3(value: number) {
 	return floor(value, 3);
 }
+
+/**
+ * Calculate the distance between 2 arrays (square root of the sum of the square power of the difference of all numbers taken 2 by 2)
+ * @param arr1 array 1
+ * @param arr2 array 2
+ * @return NaN if the array lengths are different, the distance otherwise
+ */
+export function distance(arr1: Array<number>, arr2: Array<number>) {
+	if (arr1.length !== arr2.length) return NaN;
+
+	return Math.sqrt(arr1.reduce((acc, val, index) => acc + Math.pow(val - arr2[index]!, 2), 0));
+}

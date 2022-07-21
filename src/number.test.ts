@@ -1,4 +1,4 @@
-import { clamp, floor, floor2, floor3 } from './number';
+import { clamp, distance, floor, floor2, floor3 } from './number';
 
 describe('number', () => {
 	it('clamp', () => {
@@ -29,5 +29,12 @@ describe('number', () => {
 		expect(floor3(1)).toStrictEqual(0);
 		expect(floor3(2)).toStrictEqual(0);
 		expect(floor3(3)).toStrictEqual(3);
+	});
+
+	it('distance', () => {
+		expect(distance([0, 0], [3, 4])).toStrictEqual(5);
+		expect(distance([0, 0], [-3, 4])).toStrictEqual(5);
+		expect(distance([0, 0], [-3, -4])).toStrictEqual(5);
+		expect(distance([0, 0], [3])).toStrictEqual(NaN);
 	});
 });
