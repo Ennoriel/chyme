@@ -1,4 +1,12 @@
-import { colorRange, hex2Color, hsv2Color, randomHexColor, rgb2Color } from './index';
+import {
+	colorRange,
+	hex2Color,
+	hex2rgb,
+	hsv2Color,
+	isDark,
+	randomHexColor,
+	rgb2Color
+} from './index';
 
 describe('color', () => {
 	it('randomHexColor', () => {
@@ -101,5 +109,13 @@ describe('color', () => {
 			'#ff0000',
 			'#ff00ff'
 		]);
+	});
+	it('isDark', () => {
+		expect(isDark(hex2rgb({ hex: '#FF0000' }))).toBeFalsy();
+		expect(isDark(hex2rgb({ hex: '#FFFF00' }))).toBeFalsy();
+		expect(isDark(hex2rgb({ hex: '#00FF00' }))).toBeFalsy();
+		expect(isDark(hex2rgb({ hex: '#00FFFF' }))).toBeFalsy();
+		expect(isDark(hex2rgb({ hex: '#0000FF' }))).toBeTruthy();
+		expect(isDark(hex2rgb({ hex: '#FF00FF' }))).toBeFalsy();
 	});
 });

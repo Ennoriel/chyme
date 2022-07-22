@@ -145,3 +145,13 @@ export function colorRange(startHex: string, endHex: string, length: number) {
 			}).hex
 	);
 }
+
+/**
+ * Returns whether the color is dark according to the hsp medial
+ * @param {String} rgb hexadecimal color
+ */
+export function isDark(rgb: Rgb) {
+	const { r, g, b } = rgb;
+	const hsp = Math.sqrt(0.299 * r * r + 0.587 * g * g + 0.114 * b * b);
+	return hsp < 127.5;
+}
