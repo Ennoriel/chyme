@@ -16,3 +16,16 @@ export function range(start: number, end: number, step = 1) {
 	}
 	return result;
 }
+
+/**
+ * Returns a new array filtered by a unique key method
+ * @param array array to filter
+ * @param key key method
+ */
+export function uniqBy<T>(array: Array<T>, key: (item: T) => string): Array<T> {
+	const seen: Record<string, boolean> = {};
+	return array.filter(function (item) {
+		const k = key(item);
+		return Object.prototype.hasOwnProperty.call(seen, k) ? false : (seen[k] = true);
+	});
+}

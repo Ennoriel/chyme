@@ -14,8 +14,8 @@ export function clamp(value: number, min: number, max: number): number {
  * @param value Numeric value to floor
  * @param base Base value used to floor the value
  */
-export function floor(value: number, base: number) {
-	return Math.floor(value / base) * base;
+export function floor(value: number, base = 1) {
+	return base === 1 ? Math.floor(value) : Math.floor(value / base) * base;
 }
 
 /**

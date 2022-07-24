@@ -3,3 +3,4 @@ export * from './color';
 export * from './color.types';
 export * from './number';
 export * from './object';
+export * from './string';
