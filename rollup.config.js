@@ -1,3 +1,4 @@
+import commonjs from '@rollup/plugin-commonjs';
 import typescript from '@rollup/plugin-typescript';
 import dts from 'rollup-plugin-dts';
 import pkg from './package.json';
@@ -23,7 +24,7 @@ export default [
 				sourcemap: true
 			}
 		],
-		plugins: [typescript()]
+		plugins: [commonjs(), typescript()]
 	},
 	{
 		input: 'src/index.ts',
