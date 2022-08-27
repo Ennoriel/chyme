@@ -13,3 +13,18 @@ export const isStringABool = (value?: string): boolean => {
 export const isStringAFloat = (value: string): boolean => {
 	return !isNaN(+value) && isFinite(+value);
 };
+
+/**
+ * Cast a string to a boolean or a number if parsable, returns the string otherwise
+ * @param value
+ */
+export const castStringToType = (
+	value: string | undefined
+): string | boolean | number | undefined => {
+	if (!value) return undefined;
+	return isStringAFloat(value)
+		? parseFloat(value)
+		: isStringABool(value)
+		? value === 'true'
+		: value;
+};

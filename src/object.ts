@@ -1,21 +1,17 @@
-const isArray = Array.isArray;
-const keyList = Object.keys;
-const hasProp = Object.prototype.hasOwnProperty;
-
-export function deepEqual(a: any, b: any) {
+export function deepEqual(a: unknown, b: unknown) {
 	if (a === b) return true;
 
 	if (a && b && typeof a == 'object' && typeof b == 'object') {
-		const arrA = isArray(a);
-		const arrB = isArray(b);
+		const arrA = Array.isArray(a);
+		const arrB = Array.isArray(b);
 		let i: number;
 		let length: number;
 
 		if (arrA && arrB) {
-			length = (a as Array<any>).length;
-			if (length !== (b as Array<any>).length) return false;
+			length = (a as Array<unknown>).length;
+			if (length !== (b as Array<unknown>).length) return false;
 			for (i = length; i-- !== 0; ) {
-				if (!deepEqual((a as Array<any>)[i], (b as Array<any>)[i])) return false;
+				if (!deepEqual((a as Array<unknown>)[i], (b as Array<unknown>)[i])) return false;
 			}
 			return true;
 		}
@@ -32,15 +28,15 @@ export function deepEqual(a: any, b: any) {
 		if (regexpA !== regexpB) return false;
 		if (regexpA && regexpB) return a.toString() === b.toString();
 
-		const keys = keyList(a);
+		const keys = Object.keys(a);
 		length = keys.length;
 
-		if (length !== keyList(b).length) {
+		if (length !== Object.keys(b).length) {
 			return false;
 		}
 
 		for (i = length; i-- !== 0; ) {
-			if (!hasProp.call(b, keys[i])) return false;
+			if (!Object.prototype.hasOwnProperty.call(b, keys[i])) return false;
 		}
 
 		return true;

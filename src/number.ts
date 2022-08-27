@@ -43,5 +43,6 @@ export function floor3(value: number) {
 export function distance(arr1: Array<number>, arr2: Array<number>) {
 	if (arr1.length !== arr2.length) return NaN;
 
+	// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 	return Math.sqrt(arr1.reduce((acc, val, index) => acc + Math.pow(val - arr2[index]!, 2), 0));
 }

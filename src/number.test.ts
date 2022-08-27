@@ -8,6 +8,7 @@ describe('number', () => {
 	});
 
 	it('floor', () => {
+		expect(floor(3.2)).toStrictEqual(3);
 		expect(floor(-1, 3)).toStrictEqual(-3);
 		expect(floor(0, 3)).toStrictEqual(0);
 		expect(floor(1, 3)).toStrictEqual(0);

@@ -1,6 +1,6 @@
 {
 	"compilerOptions": {
-		"lib": ["es2017", "ESNext", "dom"],
+		"lib": ["es2017", "ESNext", "dom", "DOM.Iterable"],
 		"outDir": "dist",
 		"removeComments": true,
 		"target": "ES6",

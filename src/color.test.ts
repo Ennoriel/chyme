@@ -10,7 +10,9 @@ import {
 
 describe('color', () => {
 	it('randomHexColor', () => {
-		Array(100).forEach(() => expect(randomHexColor()).toMatch(/#[0-9a-e]{6}/));
+		for (let i = 0; i < 100; i++) {
+			expect(randomHexColor()).toMatch(/#[0-9a-f]{6}/);
+		}
 	});
 
 	it('rgb2Color with transparency', () => {
@@ -108,6 +110,13 @@ describe('color', () => {
 			'#ffff00',
 			'#ff0000',
 			'#ff00ff'
+		]);
+	});
+	it('colorRange hue', () => {
+		expect(colorRange('#ff00ffff', '#ffff00ff', 3)).toStrictEqual([
+			'#ff00ff',
+			'#ff0000',
+			'#ffff00'
 		]);
 	});
 	it('isDark', () => {

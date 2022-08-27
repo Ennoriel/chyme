@@ -9,5 +9,13 @@ module.exports = {
 	},
 	moduleNameMapper: {
 		'^\\$lib/(.*)$': '<rootDir>/src/lib/$1'
+	},
+	collectCoverage: true,
+	collectCoverageFrom: ['./src/**'],
+	coverageThreshold: {
+		'./src/*.ts': {
+			statements: 90,
+			functions: 100
+		}
 	}
 };

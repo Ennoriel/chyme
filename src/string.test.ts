@@ -1,4 +1,4 @@
-import { isStringABool, isStringAFloat } from './string';
+import { castStringToType, isStringABool, isStringAFloat } from './string';
 
 describe('string', () => {
 	it('isStringABool', () => {
@@ -24,5 +24,16 @@ describe('string', () => {
 		expect(isStringAFloat('a')).toBeFalsy();
 		expect(isStringAFloat('0a')).toBeFalsy();
 		expect(isStringAFloat('one')).toBeFalsy();
+	});
+
+	it('castStringToType', () => {
+		expect(castStringToType('azer')).toStrictEqual('azer');
+		expect(castStringToType('1')).toStrictEqual(1.0);
+		expect(castStringToType('1.0')).toStrictEqual(1.0);
+		expect(castStringToType('1.1')).toStrictEqual(1.1);
+		expect(castStringToType('-1.0')).toStrictEqual(-1.0);
+		expect(castStringToType('true')).toStrictEqual(true);
+		expect(castStringToType('false')).toStrictEqual(false);
+		expect(castStringToType(undefined)).toStrictEqual(undefined);
 	});
 });
