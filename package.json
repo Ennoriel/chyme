@@ -1,6 +1,6 @@
 {
 	"name": "chyme",
-	"version": "1.2.4",
+	"version": "1.2.5",
 	"description": "typescript utils",
 	"main": "dist/cjs.js",
 	"module": "dist/esm.js",
@@ -8,8 +8,9 @@
 	"types": "dist/types.d.ts",
 	"scripts": {
 		"build": "rollup -c",
-		"lint": "eslint --ignore-path .gitignore .",
+		"changeset": "changeset",
 		"format": "prettier --write --plugin-search-dir=. .",
+		"lint": "eslint --ignore-path .gitignore .",
 		"test": "jest"
 	},
 	"repository": {
@@ -26,6 +27,7 @@
 	},
 	"homepage": "https://github.com/Ennoriel/chyme",
 	"devDependencies": {
+		"@changesets/cli": "^2.24.3",
 		"@rollup/plugin-commonjs": "^22.0.2",
 		"@rollup/plugin-typescript": "^8.3.3",
 		"@types/jest": "^28.1.4",

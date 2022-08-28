@@ -4,4 +4,5 @@ export * from './color.types';
 export * from './query';
 export * from './number';
 export * from './object';
+export * from './random';
 export * from './string';
