@@ -1,0 +1,19 @@
+html {
+	scroll-padding-bottom: var(--2xl);
+	scroll-padding-top: var(--4xl);
+	scroll-behavior: smooth;
+}
+* {
+	scrollbar-width: thin;
+	scrollbar-color: var(--scroll-color) var(--bg-color);
+	scroll-behavior: smooth;
+}
+*::-webkit-scrollbar-track {
+	background: var(--bg-color);
+}
+*::-webkit-scrollbar-thumb {
+	background-color: var(--scroll-color);
+}
+*::-webkit-scrollbar {
+	width: 7px;
+}
