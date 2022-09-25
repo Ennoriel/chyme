@@ -1,14 +1,16 @@
 /* general */
-*, *:after, *:before {
+*,
+*:after,
+*:before {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
 body {
 	margin: 0;
-	
-	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu,
-	Cantarell, 'Helvetica Neue', sans-serif;
+
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell,
+		'Helvetica Neue', sans-serif;
 	color: var(--text-color);
 }
 
@@ -22,13 +24,13 @@ a:hover {
 }
 button,
 textarea,
-input[type="submit"] {
+input[type='submit'] {
 	font-family: inherit;
 	font-size: inherit;
 	font-weight: inherit;
 	padding: var(--xs) var(--md);
 	cursor: pointer;
-	border:none;
+	border: none;
 	border-radius: var(--xs);
 }
 
@@ -39,7 +41,7 @@ p {
 
 blockquote {
 	margin: 1rem 1rem 0;
-	padding: .5rem 1rem;
+	padding: 0.5rem 1rem;
 	border-left: var(--xs) solid #bbb;
 	background: var(--bg-hatched);
 }
@@ -56,7 +58,12 @@ blockquote p {
 }
 
 /* heading */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	font-weight: 400;
 	margin: var(--xl) 0 var(--sm) 0;
 	line-height: 1;
@@ -64,6 +71,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
 	font-size: var(--font-2xl);
+	margin-bottom: var(--2xl);
 }
 
 h2 {
@@ -102,7 +110,8 @@ th {
 }
 
 @media (min-width: 768px) {
-	td, th {
+	td,
+	th {
 		padding: var(--sm) var(--md);
 	}
 }
@@ -113,7 +122,8 @@ caption {
 }
 
 /* lists */
-ul, ol {
+ul,
+ol {
 	padding-left: 3rem;
 	margin: 1rem 0;
 }
@@ -122,7 +132,10 @@ ul {
 	list-style-type: '–  ';
 }
 
-ul ul, ul ul ul, ol ol, ol ol ol {
+ul ul,
+ul ul ul,
+ol ol,
+ol ol ol {
 	margin: 0;
 	padding-left: 2rem;
 }
@@ -151,7 +164,7 @@ summary {
 }
 
 summary::after {
-	content: " (click to open)";
+	content: ' (click to open)';
 }
 
 details {
@@ -169,11 +182,13 @@ details[open] {
 }
 
 /* input */
-input[type="number"] {
+input[type='number'] {
 	-moz-appearance: textfield;
 }
 
-input:not([type="radio"]):not([type="checkbox"]):not([type="color"]):not([type="file"]):not([type="submit"]), select, textarea {
+input:not([type='radio']):not([type='checkbox']):not([type='color']):not([type='file']):not([type='submit']),
+select,
+textarea {
 	display: block;
 	width: 100%;
 	padding: 8px 16px;
@@ -200,7 +215,8 @@ fieldset label {
 }
 
 /* radio, checkbox */
-input[type="radio"], input[type="checkbox"] {
+input[type='radio'],
+input[type='checkbox'] {
 	padding: 0;
 	border: none;
 }
@@ -219,7 +235,7 @@ select {
 }
 
 /* input file */
-input[type="file"] {
+input[type='file'] {
 	opacity: 0;
 	position: absolute;
 	width: -1000px;
@@ -227,14 +243,14 @@ input[type="file"] {
 	height: 0;
 }
 
-input[type="file"] + label {
+input[type='file'] + label {
 	position: relative;
 	display: block;
 	padding-bottom: 52px;
 }
 
-input[type="file"] + label:after {
-	content: "";
+input[type='file'] + label:after {
+	content: '';
 	cursor: pointer;
 	position: absolute;
 	width: 100%;
@@ -245,7 +261,7 @@ input[type="file"] + label:after {
 	border-radius: 4px;
 	margin-top: 4px;
 	background-color: white;
-	content: "charger un fichier (formats : " attr(data-accept) ")";
+	content: 'charger un fichier (formats : ' attr(data-accept) ')';
 	text-align: center;
 	display: flex;
 	align-items: center;
@@ -254,12 +270,12 @@ input[type="file"] + label:after {
 }
 
 @media (min-width: 768px) {
-	input[type="file"] + label:after {
-		content: "cliquez pour charger un fichier (formats acceptés : " attr(data-accept) ")";
+	input[type='file'] + label:after {
+		content: 'cliquez pour charger un fichier (formats acceptés : ' attr(data-accept) ')';
 	}
 }
 
-input[type="color"] {
+input[type='color'] {
 	cursor: pointer;
 	border: none;
 	width: 60px;
@@ -276,4 +292,4 @@ textarea::-webkit-resizer {
 	border-width: 8px;
 	border-style: solid;
 	border-color: transparent orangered orangered transparent;
-  }
+}
