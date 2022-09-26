@@ -5,7 +5,8 @@ import {
 	hsv2Color,
 	isDark,
 	randomHexColor,
-	rgb2Color
+	rgb2Color,
+	isHexColorValid
 } from './index';
 
 describe('color', () => {
@@ -98,6 +99,7 @@ describe('color', () => {
 			'#234567'
 		]);
 	});
+
 	it('colorRange alpha', () => {
 		expect(colorRange('#ff000000', '#0000ffff', 3)).toStrictEqual([
 			'#ff000000',
@@ -105,6 +107,7 @@ describe('color', () => {
 			'#0000ff'
 		]);
 	});
+
 	it('colorRange hue', () => {
 		expect(colorRange('#ffff00ff', '#ff00ffff', 3)).toStrictEqual([
 			'#ffff00',
@@ -112,6 +115,7 @@ describe('color', () => {
 			'#ff00ff'
 		]);
 	});
+
 	it('colorRange hue', () => {
 		expect(colorRange('#ff00ffff', '#ffff00ff', 3)).toStrictEqual([
 			'#ff00ff',
@@ -119,12 +123,39 @@ describe('color', () => {
 			'#ffff00'
 		]);
 	});
+
 	it('isDark', () => {
+		expect(isDark('#FF0000')).toBeFalsy();
+		expect(isDark('#FFFF00')).toBeFalsy();
+		expect(isDark('#00FF00')).toBeFalsy();
+		expect(isDark('#00FFFF')).toBeFalsy();
+		expect(isDark('#0000FF')).toBeTruthy();
+		expect(isDark('#FF00FF')).toBeFalsy();
+		
 		expect(isDark(hex2rgb({ hex: '#FF0000' }))).toBeFalsy();
 		expect(isDark(hex2rgb({ hex: '#FFFF00' }))).toBeFalsy();
 		expect(isDark(hex2rgb({ hex: '#00FF00' }))).toBeFalsy();
 		expect(isDark(hex2rgb({ hex: '#00FFFF' }))).toBeFalsy();
 		expect(isDark(hex2rgb({ hex: '#0000FF' }))).toBeTruthy();
 		expect(isDark(hex2rgb({ hex: '#FF00FF' }))).toBeFalsy();
+	});
+
+	it('isHexColorValid', () => {
+		expect(isHexColorValid(undefined)).toBeFalsy();
+		expect(isHexColorValid("#1")).toBeFalsy();
+		expect(isHexColorValid("#12")).toBeFalsy();
+		expect(isHexColorValid("#12345")).toBeFalsy();
+		expect(isHexColorValid("#1234567")).toBeFalsy();
+		expect(isHexColorValid("#123456789")).toBeFalsy();
+		
+		expect(isHexColorValid("#123")).toBeTruthy();
+		expect(isHexColorValid("#1234")).toBeTruthy();
+		expect(isHexColorValid("#123456")).toBeTruthy();
+		expect(isHexColorValid("#12345678")).toBeTruthy();
+		
+		expect(isHexColorValid("#abc")).toBeTruthy();
+		expect(isHexColorValid("#abcd")).toBeTruthy();
+		expect(isHexColorValid("#abcdef")).toBeTruthy();
+		expect(isHexColorValid("#abcabcab")).toBeTruthy();
 	});
 });
