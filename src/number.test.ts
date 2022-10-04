@@ -14,6 +14,13 @@ describe('number', () => {
 		expect(floor(1, 3)).toStrictEqual(0);
 		expect(floor(2, 3)).toStrictEqual(0);
 		expect(floor(3, 3)).toStrictEqual(3);
+
+		expect(floor(-1.709403991699219 - 0.029055071113084807)).toStrictEqual(-2);
+		expect(floor(48.082322295961966 - 0.029055071113084807)).toStrictEqual(48);
+		expect(floor(-1.5909576416015627 + 0.029055071113084807)).toStrictEqual(-2);
+		expect(floor(48.140432438188135 + 0.029055071113084807)).toStrictEqual(48);
+
+		// expect(floor(48.051, 0.01)).toStrictEqual(48.05); // fails to 48.050000000000004
 	});
 
 	it('floor2', () => {

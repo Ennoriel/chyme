@@ -200,6 +200,10 @@ textarea {
 	border-radius: 4px;
 }
 
+input[type="checkbox"] {
+	width: unset;
+}
+
 label {
 	display: flex;
 	flex-direction: column;
@@ -213,8 +217,12 @@ fieldset {
 }
 
 fieldset label {
-	margin: auto;
+	margin: unset;
 	display: block;
+}
+
+fieldset label+input {
+	margin-top: 4px;
 }
 
 /* radio, checkbox */
@@ -223,6 +231,8 @@ input[type='checkbox'] {
 	padding: 0;
 	border: none;
 	cursor: pointer;
+	width: unset;
+	display: unset;
 }
 
 .fieldset-fields {
