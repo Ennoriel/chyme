@@ -15,7 +15,13 @@ export function clamp(value: number, min: number, max: number): number {
  * @param base Base value used to floor the value
  */
 export function floor(value: number, base = 1) {
-	return base === 1 ? Math.floor(value) : Math.floor(value / base) * base;
+	// return base === 1 ? Math.floor(value) : Math.floor(value / base) * base;
+	const logBase = Math.log10(base);
+	if (logBase % 1) {
+		return Math.floor(value / base) * base;
+	} else {
+		return +`${Math.round(+`${value}e${-1 * logBase}`)}e${logBase}` ;
+	}
 }
 
 /**
