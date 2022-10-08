@@ -1,5 +1,12 @@
 # chyme
 
+## 1.3.5
+
+### Patch Changes
+
+- Fix range return type
+- Add isLight & support for a custom limit to isDark and isLight
+
 ## 1.3.4
 
 ### Patch Changes

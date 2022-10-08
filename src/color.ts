@@ -147,17 +147,27 @@ export function colorRange(startHex: string, endHex: string, length: number) {
 }
 
 /**
- * Returns whether the color is dark according to the hsp medial
+ * Returns whether the color is dark according to the hsp color and to the limit passed
  * @param color rgb or hexadecimal color
+ * @param limit set the limit 1 is full black, 0 is white
  */
-export function isDark(color: Rgb | string) {
+export function isDark(color: Rgb | string, limit = .5) {
 	if (!color) return undefined;
 	if (typeof color === "string" && !isHexColorValid(color)) return undefined;
 
 	const rgb = typeof color === "string" ? hex2rgb({hex: color}) : color;
 	const { r, g, b } = rgb;
 	const hsp = Math.sqrt(0.299 * r * r + 0.587 * g * g + 0.114 * b * b);
-	return hsp < 127.5;
+	return hsp < 255 * (1 - limit);
+}
+
+/**
+ * Returns whether the color is light according to the hsp color and to the limit passed
+ * @param color rgb or hexadecimal color
+ * @param limit set the limit 1 is full white, 0 is black
+ */
+export function isLight(color: Rgb | string, limit = .5) {
+	return !isDark(color, 1 - limit);
 }
 
 /**

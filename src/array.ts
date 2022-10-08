@@ -8,7 +8,7 @@
 export function range(start: number, end: number, step = 1) {
 	let index = -1;
 	let length = Math.max(Math.ceil((end - start) / step + 1), 0);
-	const result = new Array(length);
+	const result: Array<number> = new Array(length);
 
 	while (length--) {
 		result[++index] = start;
