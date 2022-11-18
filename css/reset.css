@@ -200,7 +200,7 @@ textarea {
 	border-radius: 4px;
 }
 
-input[type="checkbox"] {
+input[type='checkbox'] {
 	width: unset;
 }
 
@@ -221,7 +221,7 @@ fieldset label {
 	display: block;
 }
 
-fieldset label+input {
+fieldset label + input {
 	margin-top: 4px;
 }
 

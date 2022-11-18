@@ -32,8 +32,8 @@
 	--bg-color: transparent;
 	--scroll-color: #ccc;
 
-	--font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell,
-	'Helvetica Neue', sans-serif;
+	--font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu,
+		Cantarell, 'Helvetica Neue', sans-serif;
 
 	--bg-hatched: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIklEQVQIW2NkQAIPHjz4zwjjgzgKCgqMYAEYB8RmROaABAAIDA+kWCZ42QAAAABJRU5ErkJggg==)
 		repeat;

@@ -28,3 +28,32 @@ export const castStringToType = (
 		? value === 'true'
 		: value;
 };
+
+/**
+ * Dedupe all space like characters (\s) and trims the string
+ * @param str
+ */
+export const dedupeSpaces = (str: string) => {
+	return str.trim().replace(/\s+/g, ' ');
+};
+
+export const escapeString = (str: string, escapes: Array<[string, string]>) => {
+	return escapes.reduce(
+		(acc, [regexp, replacement]) => acc.replace(new RegExp(regexp, 'g'), replacement),
+		str
+	);
+};
+
+/**
+ * Escape a string to be used in xml
+ * @param str
+ */
+export const escapeXmlString = (str: string) => {
+	return escapeString(str, [
+		['&', '&#38;'],
+		['<', '&#60;'],
+		['>', '&#62;'],
+		["'", '&#39;'],
+		['"', '&#34;']
+	]);
+};

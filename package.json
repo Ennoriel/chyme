@@ -1,6 +1,6 @@
 {
 	"name": "chyme",
-	"version": "1.3.5",
+	"version": "1.3.6",
 	"description": "typescript utils",
 	"main": "dist/cjs.js",
 	"module": "dist/esm.js",
@@ -9,8 +9,8 @@
 	"scripts": {
 		"build": "rollup -c",
 		"changeset": "changeset",
-		"format": "prettier --write --plugin-search-dir=. .",
 		"lint": "eslint --ignore-path .gitignore .",
+		"prettier": "prettier --write --plugin-search-dir=. .",
 		"test": "jest"
 	},
 	"repository": {

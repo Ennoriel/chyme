@@ -151,11 +151,11 @@ export function colorRange(startHex: string, endHex: string, length: number) {
  * @param color rgb or hexadecimal color
  * @param limit set the limit 1 is full black, 0 is white
  */
-export function isDark(color: Rgb | string, limit = .5) {
+export function isDark(color: Rgb | string, limit = 0.5) {
 	if (!color) return undefined;
-	if (typeof color === "string" && !isHexColorValid(color)) return undefined;
+	if (typeof color === 'string' && !isHexColorValid(color)) return undefined;
 
-	const rgb = typeof color === "string" ? hex2rgb({hex: color}) : color;
+	const rgb = typeof color === 'string' ? hex2rgb({ hex: color }) : color;
 	const { r, g, b } = rgb;
 	const hsp = Math.sqrt(0.299 * r * r + 0.587 * g * g + 0.114 * b * b);
 	return hsp < 255 * (1 - limit);
@@ -166,7 +166,7 @@ export function isDark(color: Rgb | string, limit = .5) {
  * @param color rgb or hexadecimal color
  * @param limit set the limit 1 is full white, 0 is black
  */
-export function isLight(color: Rgb | string, limit = .5) {
+export function isLight(color: Rgb | string, limit = 0.5) {
 	return !isDark(color, 1 - limit);
 }
 

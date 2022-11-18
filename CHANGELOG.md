@@ -1,5 +1,11 @@
 # chyme
 
+## 1.3.6
+
+### Patch Changes
+
+- Add rss xml generation
+
 ## 1.3.5
 
 ### Patch Changes

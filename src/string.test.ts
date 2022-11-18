@@ -1,4 +1,10 @@
-import { castStringToType, isStringABool, isStringAFloat } from './string';
+import {
+	castStringToType,
+	dedupeSpaces,
+	escapeXmlString,
+	isStringABool,
+	isStringAFloat
+} from './string';
 
 describe('string', () => {
 	it('isStringABool', () => {
@@ -35,5 +41,23 @@ describe('string', () => {
 		expect(castStringToType('true')).toStrictEqual(true);
 		expect(castStringToType('false')).toStrictEqual(false);
 		expect(castStringToType(undefined)).toStrictEqual(undefined);
+	});
+
+	it('dedupeSpaces', () => {
+		expect(dedupeSpaces('azer')).toStrictEqual('azer');
+		expect(dedupeSpaces('  azer')).toStrictEqual('azer');
+		expect(dedupeSpaces('azer  ')).toStrictEqual('azer');
+		expect(dedupeSpaces('                  azer')).toStrictEqual('azer');
+		expect(dedupeSpaces('az  er')).toStrictEqual('az er');
+		expect(dedupeSpaces('  a  z  e  r  ')).toStrictEqual('a z e r');
+		expect(dedupeSpaces('azer')).toStrictEqual('azer');
+		expect(dedupeSpaces('aze	r')).toStrictEqual('aze r');
+		expect(dedupeSpaces('aze		r')).toStrictEqual('aze r');
+	});
+
+	it('escapeXmlString', () => {
+		expect(escapeXmlString('azer & < > \' " azer')).toStrictEqual(
+			'azer &#38; &#60; &#62; &#39; &#34; azer'
+		);
 	});
 });

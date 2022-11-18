@@ -132,21 +132,21 @@ describe('color', () => {
 		expect(isDark('#00FFFF')).toBeFalsy();
 		expect(isDark('#0000FF')).toBeTruthy();
 		expect(isDark('#FF00FF')).toBeFalsy();
-		
+
 		expect(isDark('#FF0000', 0.9)).toBeFalsy();
 		expect(isDark('#FFFF00', 0.9)).toBeFalsy();
 		expect(isDark('#00FF00', 0.9)).toBeFalsy();
 		expect(isDark('#00FFFF', 0.9)).toBeFalsy();
 		expect(isDark('#0000FF', 0.9)).toBeFalsy();
 		expect(isDark('#FF00FF', 0.9)).toBeFalsy();
-		
+
 		expect(isDark('#FF0000', 0.1)).toBeTruthy();
 		expect(isDark('#FFFF00', 0.1)).toBeFalsy(); // yellow is still one of the 10% lightest color
 		expect(isDark('#00FF00', 0.1)).toBeTruthy();
 		expect(isDark('#00FFFF', 0.1)).toBeTruthy();
 		expect(isDark('#0000FF', 0.1)).toBeTruthy();
 		expect(isDark('#FF00FF', 0.1)).toBeTruthy();
-		
+
 		expect(isDark(hex2rgb({ hex: '#FF0000' }))).toBeFalsy();
 		expect(isDark(hex2rgb({ hex: '#FFFF00' }))).toBeFalsy();
 		expect(isDark(hex2rgb({ hex: '#00FF00' }))).toBeFalsy();
@@ -154,7 +154,7 @@ describe('color', () => {
 		expect(isDark(hex2rgb({ hex: '#0000FF' }))).toBeTruthy();
 		expect(isDark(hex2rgb({ hex: '#FF00FF' }))).toBeFalsy();
 	});
-	
+
 	it('isLight', () => {
 		expect(isLight('#FF0000')).toBeTruthy();
 		expect(isLight('#FFFF00')).toBeTruthy();
@@ -162,38 +162,38 @@ describe('color', () => {
 		expect(isLight('#00FFFF')).toBeTruthy();
 		expect(isLight('#0000FF')).toBeFalsy();
 		expect(isLight('#FF00FF')).toBeTruthy();
-		
+
 		expect(isLight('#FF0000', 0.9)).toBeFalsy();
 		expect(isLight('#FFFF00', 0.9)).toBeTruthy(); // yellow is still one of the 10% lightest color
 		expect(isLight('#00FF00', 0.9)).toBeFalsy();
 		expect(isLight('#00FFFF', 0.9)).toBeFalsy();
 		expect(isLight('#0000FF', 0.9)).toBeFalsy();
 		expect(isLight('#FF00FF', 0.9)).toBeFalsy();
-		
+
 		expect(isLight('#FF0000', 0.1)).toBeTruthy();
 		expect(isLight('#FFFF00', 0.1)).toBeTruthy();
 		expect(isLight('#00FF00', 0.1)).toBeTruthy();
 		expect(isLight('#00FFFF', 0.1)).toBeTruthy();
 		expect(isLight('#0000FF', 0.1)).toBeTruthy();
 		expect(isLight('#FF00FF', 0.1)).toBeTruthy();
-	})
+	});
 
 	it('isHexColorValid', () => {
 		expect(isHexColorValid(undefined)).toBeFalsy();
-		expect(isHexColorValid("#1")).toBeFalsy();
-		expect(isHexColorValid("#12")).toBeFalsy();
-		expect(isHexColorValid("#12345")).toBeFalsy();
-		expect(isHexColorValid("#1234567")).toBeFalsy();
-		expect(isHexColorValid("#123456789")).toBeFalsy();
-		
-		expect(isHexColorValid("#123")).toBeTruthy();
-		expect(isHexColorValid("#1234")).toBeTruthy();
-		expect(isHexColorValid("#123456")).toBeTruthy();
-		expect(isHexColorValid("#12345678")).toBeTruthy();
-		
-		expect(isHexColorValid("#abc")).toBeTruthy();
-		expect(isHexColorValid("#abcd")).toBeTruthy();
-		expect(isHexColorValid("#abcdef")).toBeTruthy();
-		expect(isHexColorValid("#abcabcab")).toBeTruthy();
+		expect(isHexColorValid('#1')).toBeFalsy();
+		expect(isHexColorValid('#12')).toBeFalsy();
+		expect(isHexColorValid('#12345')).toBeFalsy();
+		expect(isHexColorValid('#1234567')).toBeFalsy();
+		expect(isHexColorValid('#123456789')).toBeFalsy();
+
+		expect(isHexColorValid('#123')).toBeTruthy();
+		expect(isHexColorValid('#1234')).toBeTruthy();
+		expect(isHexColorValid('#123456')).toBeTruthy();
+		expect(isHexColorValid('#12345678')).toBeTruthy();
+
+		expect(isHexColorValid('#abc')).toBeTruthy();
+		expect(isHexColorValid('#abcd')).toBeTruthy();
+		expect(isHexColorValid('#abcdef')).toBeTruthy();
+		expect(isHexColorValid('#abcabcab')).toBeTruthy();
 	});
 });

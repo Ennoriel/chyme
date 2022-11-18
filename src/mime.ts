@@ -15,7 +15,9 @@ export function isImage(file: File | undefined) {
 		return false;
 	} else if (!MIME_IMAGES.some((mimeType) => mimeType.mime === file.type)) {
 		return false;
-	} else if (!MIME_IMAGES.some((mimeType) => file.name.toLocaleLowerCase().endsWith(mimeType.extension))) {
+	} else if (
+		!MIME_IMAGES.some((mimeType) => file.name.toLocaleLowerCase().endsWith(mimeType.extension))
+	) {
 		return false;
 	}
 	return true;
