@@ -1,6 +1,7 @@
 export * from './array';
 export * from './color';
 export * from './color.types';
+export * from './date';
 export * from './element';
 export * from './file';
 export * from './query';

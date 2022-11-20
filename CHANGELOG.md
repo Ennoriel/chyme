@@ -1,5 +1,12 @@
 # chyme
 
+## 1.3.7
+
+### Patch Changes
+
+- Add methods toDate, getDefaultDate, isValid
+- Support Date format for rss article dates"
+
 ## 1.3.6
 
 ### Patch Changes

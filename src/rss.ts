@@ -1,9 +1,10 @@
+import { toDate } from './date';
 import { dedupeSpaces, escapeXmlString } from './string';
 
 type Post = {
 	title: string;
 	description: string;
-	date: string;
+	date: string | number | Date;
 	link: string;
 };
 
@@ -17,9 +18,7 @@ type Rss = {
 };
 
 export function getRss({ title, description, link, rssLink, ttlInMin, posts }: Rss) {
-	const pubDate = posts.length
-		? new Date((posts[0] as Post).date).toUTCString()
-		: new Date().toUTCString();
+	const pubDate = toDate((posts?.[0] as Post)?.date, 'today')?.toUTCString();
 
 	const rssPosts = posts
 		.map(
@@ -27,7 +26,7 @@ export function getRss({ title, description, link, rssLink, ttlInMin, posts }: R
             <item>
                 <title>${escapeXmlString(entry.title)}</title>
                 <link>${entry.link}</link>
-                <pubDate>${new Date(entry.date).toUTCString()}</pubDate>
+                <pubDate>${toDate(entry.date, 'today')?.toUTCString()}</pubDate>
                 <description>${escapeXmlString(entry.description)}</description>
             </item>
         `
