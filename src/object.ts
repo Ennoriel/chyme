@@ -45,3 +45,12 @@ export function deepEqual(a: unknown, b: unknown) {
 	// eslint-disable-next-line no-self-compare
 	return a !== a && b !== b;
 }
+
+export function getAttr(object: any, keys: Array<string>): string | number | undefined {
+	if (!keys.length) return object;
+	try {
+		return getAttr(object[keys[0] || ''], keys.slice(1));
+	} catch {
+		return undefined;
+	}
+}

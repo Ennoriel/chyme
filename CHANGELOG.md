@@ -1,5 +1,11 @@
 # chyme
 
+## 1.3.8
+
+### Patch Changes
+
+- Add getAttr method to retrieve a nested attribute of an object
+
 ## 1.3.7
 
 ### Patch Changes
