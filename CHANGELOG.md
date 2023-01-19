@@ -1,5 +1,11 @@
 # chyme
 
+## 1.3.9
+
+### Patch Changes
+
+- update libraries
+
 ## 1.3.8
 
 ### Patch Changes
