@@ -1,4 +1,4 @@
-import { getDefaultDate, isValid, toDate } from './date';
+import { formatDate, getDefaultDate, isValid, toDate } from './date';
 
 describe('date', () => {
 	const fake_timestamp = 1577836800000;
@@ -37,5 +37,12 @@ describe('date', () => {
 			fake_timestamp
 		);
 		expect(toDate(1668953470050)).toStrictEqual(new Date(1668953470050));
+	});
+
+	it('formatDate', () => {
+		expect(formatDate('Fri Apr 27 2022 06:17:15 GMT+0200 (UTC)')).toStrictEqual("April 27, 2022");
+		expect(formatDate(new Date('Fri Apr 27 2022 06:17:15 GMT+0200 (UTC)'))).toStrictEqual("April 27, 2022");
+		expect(formatDate('Fri Apr 99 2022 06:17:15 GMT+0200 (UTC)')).toStrictEqual(undefined);
+		expect(formatDate(undefined)).toStrictEqual(undefined);
 	});
 });

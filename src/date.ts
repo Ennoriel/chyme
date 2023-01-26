@@ -33,3 +33,22 @@ export function toDate(
 	}
 	return getDefaultDate(date, defaultDateType);
 }
+
+/**
+ * Format a date
+ * @param date 
+ * @param locale 
+ * @param options 
+ * @returns 
+ */
+export function formatDate(date: string | Date | undefined, locale = 'en-US', options: Intl.DateTimeFormatOptions = {
+	year: 'numeric',
+	month: 'long',
+	day: 'numeric'
+}) {
+	if (!date) return undefined;
+	const _date = new Date(date);
+	if (!isValid(_date)) return undefined;
+
+	return new Intl.DateTimeFormat(locale, options).format(_date);
+}

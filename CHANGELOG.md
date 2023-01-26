@@ -1,5 +1,11 @@
 # chyme
 
+## 1.3.10
+
+### Patch Changes
+
+- Add formatDate
+
 ## 1.3.9
 
 ### Patch Changes
