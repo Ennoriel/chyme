@@ -1,5 +1,12 @@
 # chyme
 
+## 1.3.11
+
+### Patch Changes
+
+- 75c2473: Change strong font-weight
+- fix default header line-height
+
 ## 1.3.10
 
 ### Patch Changes

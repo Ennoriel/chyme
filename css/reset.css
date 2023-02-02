@@ -73,7 +73,7 @@ h5,
 h6 {
 	font-weight: 400;
 	margin: var(--xl) 0 var(--sm) 0;
-	line-height: 1;
+	line-height: 1.25;
 }
 
 h1 {
