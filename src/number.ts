@@ -20,7 +20,7 @@ export function floor(value: number, base = 1) {
 	if (logBase % 1) {
 		return Math.floor(value / base) * base;
 	} else {
-		return +`${Math.round(+`${value}e${-1 * logBase}`)}e${logBase}`;
+		return +`${Math.floor(+`${value}e${-1 * logBase}`)}e${logBase}`;
 	}
 }
 

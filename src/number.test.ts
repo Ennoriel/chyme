@@ -15,6 +15,11 @@ describe('number', () => {
 		expect(floor(2, 3)).toStrictEqual(0);
 		expect(floor(3, 3)).toStrictEqual(3);
 
+		expect(floor(900 / 60)).toStrictEqual(15);
+		expect(floor(930 / 60)).toStrictEqual(15);
+		expect(floor(960 / 60)).toStrictEqual(16);
+		expect(floor(990 / 60)).toStrictEqual(16);
+
 		expect(floor(-1.709403991699219 - 0.029055071113084807)).toStrictEqual(-2);
 		expect(floor(48.082322295961966 - 0.029055071113084807)).toStrictEqual(48);
 		expect(floor(-1.5909576416015627 + 0.029055071113084807)).toStrictEqual(-2);

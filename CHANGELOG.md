@@ -1,5 +1,11 @@
 # chyme
 
+## 1.3.12
+
+### Patch Changes
+
+- Fix floor method
+
 ## 1.3.11
 
 ### Patch Changes
