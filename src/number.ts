@@ -9,19 +9,40 @@ export function clamp(value: number, min: number, max: number): number {
 	return Math.min(Math.max(min, value), max);
 }
 
+export function applyRoundingFunction(roundingFunction: (value: number) => number, value: number, base = 1) {
+	const logBase = Math.log10(base);
+	if (logBase % 1) {
+		return roundingFunction(value / base) * base;
+	} else {
+		return +`${roundingFunction(+`${value}e${-1 * logBase}`)}e${logBase}`;
+	}
+}
+
 /**
  * Floors the value according to the base
  * @param value Numeric value to floor
  * @param base Base value used to floor the value
  */
 export function floor(value: number, base = 1) {
-	// return base === 1 ? Math.floor(value) : Math.floor(value / base) * base;
-	const logBase = Math.log10(base);
-	if (logBase % 1) {
-		return Math.floor(value / base) * base;
-	} else {
-		return +`${Math.floor(+`${value}e${-1 * logBase}`)}e${logBase}`;
-	}
+	return applyRoundingFunction(Math.floor, value, base)
+}
+
+/**
+ * Rounds the value according to the base
+ * @param value Numeric value to round
+ * @param base Base value used to round the value
+ */
+export function round(value: number, base = 1) {
+	return applyRoundingFunction(Math.round, value, base)
+}
+
+/**
+ * Ceils the value according to the base
+ * @param value Numeric value to ceil
+ * @param base Base value used to ceil the value
+ */
+export function ceil(value: number, base = 1) {
+	return applyRoundingFunction(Math.ceil, value, base)
 }
 
 /**

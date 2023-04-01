@@ -1,5 +1,11 @@
 # chyme
 
+## 1.3.13
+
+### Patch Changes
+
+- Add round and ceil methods"
+
 ## 1.3.12
 
 ### Patch Changes
