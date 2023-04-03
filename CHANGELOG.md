@@ -1,5 +1,11 @@
 # chyme
 
+## 1.3.14
+
+### Patch Changes
+
+- set input, textarea and select style to use same font-family
+
 ## 1.3.13
 
 ### Patch Changes
