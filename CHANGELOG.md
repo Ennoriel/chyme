@@ -1,5 +1,11 @@
 # chyme
 
+## 1.3.15
+
+### Patch Changes
+
+- Internalize fdto to fix bundle issues
+
 ## 1.3.14
 
 ### Patch Changes

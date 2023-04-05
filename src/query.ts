@@ -3,7 +3,7 @@ import {
 	fromObj as fdtoFromObject,
 	FdtoObject,
 	FdtoPrimitives
-} from 'form-data-to-object';
+} from './fdto';
 import { castStringToType } from './string';
 
 export { fdtoToObject, fdtoFromObject, FdtoObject, FdtoPrimitives };
