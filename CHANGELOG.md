@@ -1,5 +1,11 @@
 # chyme
 
+## 1.3.16
+
+### Patch Changes
+
+- Remove textarea resizer
+
 ## 1.3.15
 
 ### Patch Changes

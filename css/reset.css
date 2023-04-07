@@ -312,8 +312,3 @@ textarea {
 	min-height: var(--4xl);
 	cursor: text;
 }
-textarea::-webkit-resizer {
-	border-width: 8px;
-	border-style: solid;
-	border-color: transparent orangered orangered transparent;
-}
