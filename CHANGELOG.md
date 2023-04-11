@@ -1,5 +1,11 @@
 # chyme
 
+## 1.3.17
+
+### Patch Changes
+
+- remove input type file style
+
 ## 1.3.16
 
 ### Patch Changes
