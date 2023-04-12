@@ -82,6 +82,32 @@ describe('color', () => {
 		});
 	});
 
+	it('hex2Color grey', () => {
+		expect(hex2Color({ hex: '#777777' })).toStrictEqual({
+			h: 0,
+			s: 0,
+			v: 0.4666666666666667,
+			a: 1,
+			hex: '#777777',
+			r: 119,
+			g: 119,
+			b: 119
+		});
+	});
+
+	it('hex2Color greenish', () => {
+		expect(hex2Color({ hex: '#779988' })).toStrictEqual({
+			h: 150,
+			s: 0.22222222222222218,
+			v: 0.6,
+			a: 1,
+			hex: '#779988',
+			r: 119,
+			g: 153,
+			b: 136
+		});
+	});
+
 	it('colorRange', () => {
 		expect(colorRange('#ff3eff', '#234567', 14)).toStrictEqual([
 			'#ff3eff',
@@ -123,6 +149,12 @@ describe('color', () => {
 			'#ff0000',
 			'#ffff00'
 		]);
+	});
+
+	it('colorRange undefined', () => {
+		expect(colorRange('', '#ffff00ff', 3)).toStrictEqual(undefined);
+		expect(colorRange('#ffff00ff', '', 3)).toStrictEqual(undefined);
+		expect(colorRange('#ff00ffff', '#ffff00ff', 0)).toStrictEqual(undefined);
 	});
 
 	it('isDark', () => {

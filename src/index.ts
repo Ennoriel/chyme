@@ -4,6 +4,7 @@ export * from './color.types';
 export * from './date';
 export * from './element';
 export * from './file';
+export * from './geo';
 export * from './query';
 export * from './mime';
 export * from './number';

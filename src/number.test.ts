@@ -1,10 +1,23 @@
-import { ceil, clamp, distance, floor, floor2, floor3, round } from './number';
+import {
+	applyRoundingFunction,
+	ceil,
+	clamp,
+	distance,
+	floor,
+	floor2,
+	floor3,
+	round
+} from './number';
 
 describe('number', () => {
 	it('clamp', () => {
 		expect(clamp(10, 1, 100)).toStrictEqual(10);
 		expect(clamp(10, 50, 100)).toStrictEqual(50);
 		expect(clamp(10, 1, 5)).toStrictEqual(5);
+	});
+
+	it('applyRoundingFunction', () => {
+		expect(applyRoundingFunction(Math.floor, 3.2)).toStrictEqual(3);
 	});
 
 	it('floor', () => {
