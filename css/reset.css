@@ -175,10 +175,6 @@ summary {
 	cursor: pointer;
 }
 
-summary::after {
-	content: ' (click to open)';
-}
-
 details {
 	margin: 1rem 0;
 	padding: 4px 8px 8px 12px;

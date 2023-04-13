@@ -1,5 +1,12 @@
 # chyme
 
+## 1.3.19
+
+### Patch Changes
+
+- Remove summary after styling
+- up dependencies
+
 ## 1.3.18
 
 ### Patch Changes
