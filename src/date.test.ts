@@ -40,8 +40,10 @@ describe('date', () => {
 	});
 
 	it('formatDate', () => {
-		expect(formatDate('Fri Apr 27 2022 06:17:15 GMT+0200 (UTC)')).toStrictEqual("April 27, 2022");
-		expect(formatDate(new Date('Fri Apr 27 2022 06:17:15 GMT+0200 (UTC)'))).toStrictEqual("April 27, 2022");
+		expect(formatDate('Fri Apr 27 2022 06:17:15 GMT+0200 (UTC)')).toStrictEqual('April 27, 2022');
+		expect(formatDate(new Date('Fri Apr 27 2022 06:17:15 GMT+0200 (UTC)'))).toStrictEqual(
+			'April 27, 2022'
+		);
 		expect(formatDate('Fri Apr 99 2022 06:17:15 GMT+0200 (UTC)')).toStrictEqual(undefined);
 		expect(formatDate(undefined)).toStrictEqual(undefined);
 	});

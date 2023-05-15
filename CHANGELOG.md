@@ -5,6 +5,7 @@
 ### Patch Changes
 
 - Add formatThousands
+- Add hasParentThat
 
 ## 1.3.19
 

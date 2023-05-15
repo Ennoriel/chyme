@@ -113,15 +113,15 @@ describe('number', () => {
 	});
 
 	it('formatThousands', () => {
-		expect(formatThousands(1)).toStrictEqual("1");
-		expect(formatThousands(12)).toStrictEqual("12");
-		expect(formatThousands(123)).toStrictEqual("123");
-		expect(formatThousands(1234)).toStrictEqual("1 234");
-		expect(formatThousands(12345)).toStrictEqual("12 345");
-		expect(formatThousands("1")).toStrictEqual("1");
-		expect(formatThousands("12")).toStrictEqual("12");
-		expect(formatThousands("123")).toStrictEqual("123");
-		expect(formatThousands("1234")).toStrictEqual("1 234");
-		expect(formatThousands("12345")).toStrictEqual("12 345");
+		expect(formatThousands(1)).toStrictEqual('1');
+		expect(formatThousands(12)).toStrictEqual('12');
+		expect(formatThousands(123)).toStrictEqual('123');
+		expect(formatThousands(1234)).toStrictEqual('1 234');
+		expect(formatThousands(12345)).toStrictEqual('12 345');
+		expect(formatThousands('1')).toStrictEqual('1');
+		expect(formatThousands('12')).toStrictEqual('12');
+		expect(formatThousands('123')).toStrictEqual('123');
+		expect(formatThousands('1234')).toStrictEqual('1 234');
+		expect(formatThousands('12345')).toStrictEqual('12 345');
 	});
 });
