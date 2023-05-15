@@ -9,7 +9,11 @@ export function clamp(value: number, min: number, max: number): number {
 	return Math.min(Math.max(min, value), max);
 }
 
-export function applyRoundingFunction(roundingFunction: (value: number) => number, value: number, base = 1) {
+export function applyRoundingFunction(
+	roundingFunction: (value: number) => number,
+	value: number,
+	base = 1
+) {
 	const logBase = Math.log10(base);
 	if (logBase % 1) {
 		return roundingFunction(value / base) * base;
@@ -24,7 +28,7 @@ export function applyRoundingFunction(roundingFunction: (value: number) => numbe
  * @param base Base value used to floor the value
  */
 export function floor(value: number, base = 1) {
-	return applyRoundingFunction(Math.floor, value, base)
+	return applyRoundingFunction(Math.floor, value, base);
 }
 
 /**
@@ -33,7 +37,7 @@ export function floor(value: number, base = 1) {
  * @param base Base value used to round the value
  */
 export function round(value: number, base = 1) {
-	return applyRoundingFunction(Math.round, value, base)
+	return applyRoundingFunction(Math.round, value, base);
 }
 
 /**
@@ -42,7 +46,7 @@ export function round(value: number, base = 1) {
  * @param base Base value used to ceil the value
  */
 export function ceil(value: number, base = 1) {
-	return applyRoundingFunction(Math.ceil, value, base)
+	return applyRoundingFunction(Math.ceil, value, base);
 }
 
 /**
@@ -72,4 +76,13 @@ export function distance(arr1: Array<number>, arr2: Array<number>) {
 
 	// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 	return Math.sqrt(arr1.reduce((acc, val, index) => acc + Math.pow(val - arr2[index]!, 2), 0));
+}
+
+/**
+ * Format a number with a space every 3 digits (12 345)
+ * @param number number to format
+ * @returns
+ */
+export function formatThousands(number: number | string) {
+	return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
 }

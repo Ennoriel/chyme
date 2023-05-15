@@ -1,5 +1,11 @@
 # chyme
 
+## 1.3.20
+
+### Patch Changes
+
+- Add formatThousands
+
 ## 1.3.19
 
 ### Patch Changes

@@ -6,6 +6,7 @@ import {
 	floor,
 	floor2,
 	floor3,
+	formatThousands,
 	round
 } from './number';
 
@@ -109,5 +110,18 @@ describe('number', () => {
 		expect(distance([0, 0], [-3, 4])).toStrictEqual(5);
 		expect(distance([0, 0], [-3, -4])).toStrictEqual(5);
 		expect(distance([0, 0], [3])).toStrictEqual(NaN);
+	});
+
+	it('formatThousands', () => {
+		expect(formatThousands(1)).toStrictEqual("1");
+		expect(formatThousands(12)).toStrictEqual("12");
+		expect(formatThousands(123)).toStrictEqual("123");
+		expect(formatThousands(1234)).toStrictEqual("1 234");
+		expect(formatThousands(12345)).toStrictEqual("12 345");
+		expect(formatThousands("1")).toStrictEqual("1");
+		expect(formatThousands("12")).toStrictEqual("12");
+		expect(formatThousands("123")).toStrictEqual("123");
+		expect(formatThousands("1234")).toStrictEqual("1 234");
+		expect(formatThousands("12345")).toStrictEqual("12 345");
 	});
 });
