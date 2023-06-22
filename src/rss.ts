@@ -26,6 +26,7 @@ export function getRss({ title, description, link, rssLink, ttlInMin, posts }: R
             <item>
                 <title>${escapeXmlString(entry.title)}</title>
                 <link>${entry.link}</link>
+                <guid>${entry.link}</guid>
                 <pubDate>${toDate(entry.date, 'today')?.toUTCString()}</pubDate>
                 <description>${escapeXmlString(entry.description)}</description>
             </item>
@@ -34,7 +35,7 @@ export function getRss({ title, description, link, rssLink, ttlInMin, posts }: R
 		.join('');
 
 	const rss = `
-        <?xml version="1.0"?>
+        <?xml version="1.0" encoding="UTF-8" ?>
         <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
             <channel>
                 <title>${escapeXmlString(title)}</title>
