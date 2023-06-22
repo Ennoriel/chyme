@@ -1,5 +1,13 @@
 # chyme
 
+## 1.3.21
+
+### Patch Changes
+
+- R-remove default box shadow on input checkbox
+- Add rss item guid
+- Add sitemap generator
+
 ## 1.3.20
 
 ### Patch Changes

@@ -31,7 +31,7 @@ describe('element', () => {
 		expect(hasParentThat(input, (e: HTMLElement) => e.id === 'test')).toBeTruthy();
 		expect(hasParentThat(input, (e: HTMLElement) => e.id !== 'test')).toBeTruthy();
 		const falsePredicate = (e: HTMLElement) => e.id === 'test' && e.classList.contains('not here');
-		expect(			hasParentThat(input, falsePredicate)		).toBeFalsy();
+		expect(hasParentThat(input, falsePredicate)).toBeFalsy();
 		expect(hasParentThat(input, (e: HTMLElement) => e.tagName === 'BODY', test)).toBeFalsy();
 	});
 });

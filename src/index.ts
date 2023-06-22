@@ -11,5 +11,6 @@ export * from './number';
 export * from './object';
 export * from './random';
 export * from './rss';
+export * from './sitemap';
 export * from './string';
 export * from './type';
