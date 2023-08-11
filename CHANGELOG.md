@@ -1,5 +1,11 @@
 # chyme
 
+## 1.3.22
+
+### Patch Changes
+
+- Fix accessibility code block color
+
 ## 1.3.21
 
 ### Patch Changes

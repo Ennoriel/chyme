@@ -79,7 +79,7 @@ pre[class*='language-'] code {
 .token.keyword,
 .token.important,
 .token.deleted {
-	color: #ef3b7d;
+	color: #ff4b8d;
 }
 
 .token.regex,
@@ -115,7 +115,7 @@ code.language-markup {
 }
 
 code.language-markup .token.tag {
-	color: #ef3b7d;
+	color: #ff4b8d;
 }
 
 code.language-markup .token.attr-name {
