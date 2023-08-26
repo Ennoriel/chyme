@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 export type FdtoPrimitives = string | number | boolean;
 export type FdtoObject =
 	| FdtoPrimitives
@@ -7,7 +9,7 @@ export function toObj<T extends FdtoObject>(
 	source: Record<string, FdtoPrimitives | Array<FdtoPrimitives>>
 ): T {
 	return Object.keys(source).reduce(function (output, key) {
-		const parentKey = key.match(/[^\[]*/i);
+		const parentKey = key.match(/[^[]*/i);
 		const pathsStr = key.match(/\[.*?\]/g) || [];
 		const paths = [parentKey?.[0]].concat(pathsStr).map(function (key) {
 			return key?.replace(/\[|\]/g, '');

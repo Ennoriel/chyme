@@ -13,20 +13,23 @@ export { fdtoToObject, fdtoFromObject, FdtoObject, FdtoPrimitives };
  * @param formData FormData object
  */
 export const formDataToObject = <T extends FdtoObject>(formData: FormData | URLSearchParams): T => {
-	const linearizedObject = [...formData.entries()].reduce((acc, [key, value]) => {
-		const parsedValue = castStringToType(value as string | undefined);
+	const linearizedObject = [...formData.entries()].reduce(
+		(acc, [key, value]) => {
+			const parsedValue = castStringToType(value as string | undefined);
 
-		if (parsedValue !== undefined) {
-			if (!(key in acc)) {
-				acc[key] = parsedValue;
-			} else if (Array.isArray(acc[key])) {
-				(acc[key] as Array<FdtoPrimitives>).push(parsedValue);
-			} else {
-				acc[key] = [acc[key] as FdtoPrimitives, parsedValue];
+			if (parsedValue !== undefined) {
+				if (!(key in acc)) {
+					acc[key] = parsedValue;
+				} else if (Array.isArray(acc[key])) {
+					(acc[key] as Array<FdtoPrimitives>).push(parsedValue);
+				} else {
+					acc[key] = [acc[key] as FdtoPrimitives, parsedValue];
+				}
 			}
-		}
-		return acc;
-	}, {} as Record<string, FdtoPrimitives | Array<FdtoPrimitives>>);
+			return acc;
+		},
+		{} as Record<string, FdtoPrimitives | Array<FdtoPrimitives>>
+	);
 
 	return fdtoToObject<T>(linearizedObject);
 };
