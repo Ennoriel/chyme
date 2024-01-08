@@ -1,11 +1,8 @@
 /** @type {import('ts-jest/dist/types').JestConfigWithTsJest} */
 module.exports = {
-	preset: 'ts-jest/presets/default-esm',
+	preset: 'ts-jest',
 	testEnvironment: 'jsdom',
 	extensionsToTreatAsEsm: ['.ts'],
-	moduleNameMapper: {
-		'^\\$lib/(.*)$': '<rootDir>/src/lib/$1'
-	},
 	collectCoverage: true,
 	collectCoverageFrom: ['./src/**'],
 	coverageThreshold: {

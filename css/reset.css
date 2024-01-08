@@ -6,6 +6,7 @@
 	padding: 0;
 	box-sizing: border-box;
 }
+
 body {
 	margin: 0;
 
@@ -22,9 +23,11 @@ a {
 	color: var(--link-color);
 	text-decoration: none;
 }
+
 a:hover {
 	text-decoration: underline;
 }
+
 button,
 textarea,
 input[type='submit'] {
@@ -124,6 +127,7 @@ th {
 }
 
 @media (min-width: 768px) {
+
 	td,
 	th {
 		padding: var(--sm) var(--md);
@@ -228,7 +232,7 @@ fieldset label {
 	display: block;
 }
 
-fieldset label + input {
+fieldset label+input {
 	margin-top: 4px;
 }
 

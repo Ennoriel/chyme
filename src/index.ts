@@ -9,6 +9,7 @@ export * from './query';
 export * from './mime';
 export * from './number';
 export * from './object';
+export * from './promise';
 export * from './random';
 export * from './rss';
 export * from './sitemap';
