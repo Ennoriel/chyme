@@ -5,7 +5,6 @@ export * from './date';
 export * from './element';
 export * from './file';
 export * from './geo';
-export * from './query';
 export * from './mime';
 export * from './number';
 export * from './object';

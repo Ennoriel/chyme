@@ -1,5 +1,13 @@
 # chyme
 
+## 2.0.0
+
+### Major Changes
+
+- remove form-data-to-object
+- restrict compile output to es
+- remove useless files in the package
+
 ## 1.3.23
 
 ### Patch Changes
