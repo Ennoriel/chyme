@@ -1,5 +1,12 @@
 # chyme
 
+## 2.0.1
+
+### Patch Changes
+
+- rollback removing cjs format
+- change some prism code style
+
 ## 2.0.0
 
 ### Major Changes

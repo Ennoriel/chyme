@@ -7,16 +7,16 @@ pre[class*='language-'] {
 	word-wrap: normal;
 	font-family: Menlo, Monaco, 'Courier New', monospace;
 	font-size: 14px;
-	color: #76d9e6;
+	color: #eee;
 	text-shadow: none;
 }
 
-pre > code[class*='language-'] {
+pre>code[class*='language-'] {
 	font-size: 1em;
 }
 
 pre[class*='language-'],
-:not(pre) > code[class*='language-'] {
+:not(pre)>code[class*='language-'] {
 	background: #2a2a2a;
 }
 
@@ -33,14 +33,14 @@ pre[class*='language-'] code {
 	display: block;
 }
 
-:not(pre) > code {
+:not(pre)>code {
 	border: 1px solid #aaa;
 	border-radius: 4px;
 	padding: 2px 4px;
 }
 
 .token.namespace {
-	opacity: 0.7;
+	color: #ff4b8d;
 }
 
 .token.comment,
@@ -58,10 +58,14 @@ pre[class*='language-'] code {
 }
 
 .token.attr-name,
-.token.string {
-	color: #e6d06c;
+.token.string,
+.token.tag,
+.token.function {
+	color: #76d9e6;
 }
 
+.token.property,
+.token.parameter,
 .token.entity,
 .token.url,
 .language-css .token.string,
