@@ -2,6 +2,7 @@ import {
 	castStringToType,
 	dedupeSpaces,
 	escapeXmlString,
+	generateFolderName,
 	isStringABool,
 	isStringAFloat
 } from './string';
@@ -59,5 +60,9 @@ describe('string', () => {
 		expect(escapeXmlString('azer & < > \' " azer')).toStrictEqual(
 			'azer &#38; &#60; &#62; &#39; &#34; azer'
 		);
+	});
+
+	it('generateFolderName', () => {
+		expect(generateFolderName('ceci?êst : un -Test')).toStrictEqual('ceci-est-un-test');
 	});
 });

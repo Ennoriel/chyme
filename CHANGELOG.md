@@ -1,5 +1,11 @@
 # chyme
 
+## 2.0.2
+
+### Patch Changes
+
+- add generateFolderName to generate a folder name based on a string
+
 ## 2.0.1
 
 ### Patch Changes

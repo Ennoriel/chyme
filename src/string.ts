@@ -25,8 +25,8 @@ export const castStringToType = (
 	return isStringAFloat(value)
 		? parseFloat(value)
 		: isStringABool(value)
-		? value === 'true'
-		: value;
+			? value === 'true'
+			: value;
 };
 
 /**
@@ -57,3 +57,18 @@ export const escapeXmlString = (str: string) => {
 		['"', '&#34;']
 	]);
 };
+
+/**
+ * Generate a folder name based on a string
+ * @param str 
+ * @returns 
+ */
+export const generateFolderName = (str: string) => {
+	return str.normalize("NFD")
+		.replace(/[\u0300-\u036f]/g, "")
+		.toLocaleLowerCase()
+		.replace(/[,.;:?!&"'() ]/g, "-")
+		.replace(/-+/g, "-")
+		.replace(/-^/g, "")
+		.replace(/$-/g, "")
+}
