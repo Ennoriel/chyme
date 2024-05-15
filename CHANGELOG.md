@@ -1,5 +1,14 @@
 # chyme
 
+## 2.0.3
+
+### Patch Changes
+
+- change generateFolderName: also replace the character "\"
+- add ensureTruthy and ensureNonNullable
+- add ensureRejected and ensureFulfilled
+- bump libraries
+
 ## 2.0.2
 
 ### Patch Changes

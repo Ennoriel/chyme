@@ -75,10 +75,10 @@ export function rgb2hsv({ r, g, b, a = 1 }: Rgb): Hsv {
 		C === 0
 			? 0
 			: V === R
-			? (G - B) / C + (G < B ? 6 : 0)
-			: V === G
-			? (B - R) / C + 2
-			: (R - G) / C + 4;
+				? (G - B) / C + (G < B ? 6 : 0)
+				: V === G
+					? (B - R) / C + 2
+					: (R - G) / C + 4;
 	H = (H % 6) * 60;
 	return {
 		a: a,

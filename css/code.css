@@ -11,12 +11,12 @@ pre[class*='language-'] {
 	text-shadow: none;
 }
 
-pre>code[class*='language-'] {
+pre > code[class*='language-'] {
 	font-size: 1em;
 }
 
 pre[class*='language-'],
-:not(pre)>code[class*='language-'] {
+:not(pre) > code[class*='language-'] {
 	background: #2a2a2a;
 }
 
@@ -33,7 +33,7 @@ pre[class*='language-'] code {
 	display: block;
 }
 
-:not(pre)>code {
+:not(pre) > code {
 	border: 1px solid #aaa;
 	border-radius: 4px;
 	padding: 2px 4px;

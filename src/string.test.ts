@@ -64,5 +64,6 @@ describe('string', () => {
 
 	it('generateFolderName', () => {
 		expect(generateFolderName('ceci?êst : un -Test')).toStrictEqual('ceci-est-un-test');
+		expect(generateFolderName('https://machyme.fr')).toStrictEqual('https-machyme-fr');
 	});
 });

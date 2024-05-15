@@ -1,4 +1,5 @@
 export * from './array';
+export * from './boolean';
 export * from './color';
 export * from './color.types';
 export * from './date';

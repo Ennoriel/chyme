@@ -127,7 +127,6 @@ th {
 }
 
 @media (min-width: 768px) {
-
 	td,
 	th {
 		padding: var(--sm) var(--md);
@@ -232,7 +231,7 @@ fieldset label {
 	display: block;
 }
 
-fieldset label+input {
+fieldset label + input {
 	margin-top: 4px;
 }
 

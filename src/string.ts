@@ -60,15 +60,16 @@ export const escapeXmlString = (str: string) => {
 
 /**
  * Generate a folder name based on a string
- * @param str 
- * @returns 
+ * @param str
+ * @returns
  */
 export const generateFolderName = (str: string) => {
-	return str.normalize("NFD")
-		.replace(/[\u0300-\u036f]/g, "")
+	return str
+		.normalize('NFD')
+		.replace(/[\u0300-\u036f]/g, '')
 		.toLocaleLowerCase()
-		.replace(/[,.;:?!&"'() ]/g, "-")
-		.replace(/-+/g, "-")
-		.replace(/-^/g, "")
-		.replace(/$-/g, "")
-}
+		.replace(/[,.;:?!&"'() /\\]/g, '-')
+		.replace(/-+/g, '-')
+		.replace(/-^/g, '')
+		.replace(/$-/g, '');
+};
