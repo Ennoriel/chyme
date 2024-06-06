@@ -1,5 +1,12 @@
 # chyme
 
+## 2.0.4
+
+### Patch Changes
+
+- a31867c: add css button transition
+- c88f371: add groupBy, countDuplicates and filterAttributesWithLessThan methods
+
 ## 2.0.3
 
 ### Patch Changes
