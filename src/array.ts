@@ -29,3 +29,51 @@ export function uniqBy<T>(array: Array<T>, key: (item: T) => string): Array<T> {
 		return Object.prototype.hasOwnProperty.call(seen, k) ? false : (seen[k] = true);
 	});
 }
+
+/**
+ * Returns a record with the key being the unique attribute and an array of element
+ * @param array array to filter
+ * @param key key method
+ */
+export function groupBy<T>(array: Array<T>, key: (item: T) => string): Record<string, Array<T>> {
+	return array.reduce(
+		function (acc, item) {
+			const k = key(item);
+			if (k in acc && acc[k]) {
+				(acc[k] as Array<T>).push(item);
+			} else {
+				acc[k] = [item];
+			}
+			return acc;
+		},
+		{} as Record<string, Array<T>>
+	);
+}
+
+/**
+ * Count duplicates
+ * @param array array to count duplicates
+ */
+export function countDuplicates(array: Array<string>) {
+	return array.reduce(
+		(duplicates, word) => {
+			if (duplicates[word]) {
+				duplicates[word]++;
+			} else {
+				duplicates[word] = 1;
+			}
+
+			return duplicates;
+		},
+		{} as Record<string, number>
+	);
+}
+
+/**
+ * remove attributes that have less than the provided number
+ * @param array array to filter
+ * @param limit number
+ */
+export function filterAttributesWithLessThan(array: Record<string, number>, limit: number) {
+	return Object.fromEntries(Object.entries(array).filter((e) => e[1] >= limit));
+}
