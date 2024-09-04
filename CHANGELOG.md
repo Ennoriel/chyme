@@ -1,5 +1,11 @@
 # chyme
 
+## 3.0.0
+
+### Major Changes
+
+- 013773e: remove atom reference to rss feed
+
 ## 2.0.4
 
 ### Patch Changes
