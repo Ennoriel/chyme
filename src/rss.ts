@@ -6,6 +6,11 @@ type Post = {
     description: string;
     date: string | number | Date;
     link: string;
+    image?: {
+        length?: number,
+        type: string,
+        url: string
+    }
 };
 
 type Rss = {
@@ -21,20 +26,21 @@ export function getRss({ title, description, link, ttlInMin, posts }: Rss) {
 
     const rssPosts = posts
         .map(
-            (entry) => `
-            <item>
+            (entry) => {
+                const enclosure = entry.image ? `<enclosure ${entry.image.length ? `length="${entry.image.length}" ` : ""} type="${entry.image.type}" url="${entry.image.url}" />` : ""
+                return ` <item>
                 <title>${escapeXmlString(entry.title)}</title>
                 <link>${entry.link}</link>
                 <guid>${entry.link}</guid>
                 <pubDate>${toDate(entry.date, 'today')?.toUTCString()}</pubDate>
                 <description>${escapeXmlString(entry.description)}</description>
-            </item>
-`
+                ${enclosure}
+            </item> `
+            }
         )
         .join('');
 
-    const rss = `
-        <?xml version="1.0" encoding="UTF-8" ?>
+    const rss = `<?xml version="1.0" encoding="UTF-8" ?>
         <rss version="2.0">
             <channel>
                 <title>${escapeXmlString(title)}</title>
