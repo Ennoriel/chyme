@@ -1,5 +1,11 @@
 # chyme
 
+## 3.0.1
+
+### Patch Changes
+
+- e6bda7f: Add enclosure to rss item
+
 ## 3.0.0
 
 ### Major Changes
