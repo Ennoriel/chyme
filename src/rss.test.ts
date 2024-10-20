@@ -13,7 +13,7 @@ describe('rss', () => {
 						title: 'fake title',
 						description: 'fake content',
 						date: 'Sun Jul 10 2022 17:12:22 GMT+0200 (UTC)',
-						link: 'https://fake-website.fr/blog/blog-article',
+						link: 'https://fake-website.fr/blog/blog-article'
 					}
 				]
 			})
@@ -34,8 +34,8 @@ describe('rss', () => {
 						date: 'Sun Jul 10 2022 17:12:22 GMT+0200 (UTC)',
 						link: 'https://fake-website.fr/blog/blog-article',
 						image: {
-							type: "image/jpg",
-							url: "https://fake-website.fr/blog/blog-article.jpg"
+							type: 'image/jpg',
+							url: 'https://fake-website.fr/blog/blog-article.jpg'
 						}
 					},
 					{
@@ -45,8 +45,8 @@ describe('rss', () => {
 						link: 'https://fake-website.fr/blog/blog-article',
 						image: {
 							length: 14569,
-							type: "image/jpg",
-							url: "https://fake-website.fr/blog/blog-article.jpg"
+							type: 'image/jpg',
+							url: 'https://fake-website.fr/blog/blog-article.jpg'
 						}
 					}
 				]
