@@ -1,5 +1,11 @@
 # chyme
 
+## 3.1.0
+
+### Minor Changes
+
+- f0733f0: add functions getLongestString, sum, randomItemOfArray, isObject
+
 ## 3.0.2
 
 ### Patch Changes
