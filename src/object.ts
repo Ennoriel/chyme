@@ -1,3 +1,9 @@
+/**
+ * check that two arguments are equal
+ * @param a unknown
+ * @param b unknown
+ * @returns boolean
+ */
 export function deepEqual(a: unknown, b: unknown) {
 	if (a === b) return true;
 
@@ -46,11 +52,32 @@ export function deepEqual(a: unknown, b: unknown) {
 	return a !== a && b !== b;
 }
 
-export function getAttr(object: any, keys: Array<string>): string | number | undefined {
+/**
+ * get the value of a nested property in an object
+ * @param object any
+ * @param keys nested property (user.first.name → ["user", "first", "name"])
+ * @returns T
+ */
+export function getAttr<T>(object: any, keys: Array<string>): T | undefined {
 	if (!keys.length) return object;
 	try {
 		return getAttr(object[keys[0] || ''], keys.slice(1));
 	} catch {
 		return undefined;
 	}
+}
+
+/**
+ * type guard - check wether the argument is an object
+ * @param obj unknown
+ * @returns boolean
+ */
+export function isObject(obj: unknown): obj is Record<string, unknown> {
+	return (
+		typeof obj === 'object' &&
+		!Array.isArray(obj) &&
+		!(obj instanceof RegExp) &&
+		!(obj instanceof Date) &&
+		obj !== null
+	);
 }

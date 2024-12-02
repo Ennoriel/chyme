@@ -1,4 +1,4 @@
-import { deepEqual, getAttr } from './object';
+import { deepEqual, getAttr, isObject } from './object';
 
 describe('object', () => {
 	it('deepEqual - equal rules', () => {
@@ -62,5 +62,19 @@ describe('object', () => {
 		expect(getAttr(obj, ['attr'])).toStrictEqual(obj.attr);
 		expect(getAttr(obj, ['attr2', 'attr3'])).toStrictEqual(obj.attr2.attr3);
 		expect(getAttr(obj, ['attr4'])).toStrictEqual(undefined);
+	});
+
+	it('isObject', () => {
+		expect(isObject(null)).toBeFalsy();
+		expect(isObject(undefined)).toBeFalsy();
+		expect(isObject('azer')).toBeFalsy();
+		expect(isObject(123)).toBeFalsy();
+		expect(isObject(new RegExp(''))).toBeFalsy();
+		expect(isObject(true)).toBeFalsy();
+		expect(isObject([])).toBeFalsy();
+		expect(isObject([{}])).toBeFalsy();
+
+		expect(isObject({})).toBeTruthy();
+		expect(isObject({ a: 'b' })).toBeTruthy();
 	});
 });

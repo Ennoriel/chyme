@@ -77,3 +77,30 @@ export function countDuplicates(array: Array<string>) {
 export function filterAttributesWithLessThan(array: Record<string, number>, limit: number) {
 	return Object.fromEntries(Object.entries(array).filter((e) => e[1] >= limit));
 }
+
+/**
+ * get longest string of an array of string (returns undefined if the array is empty)
+ * @param array array of string
+ */
+export function getLongestString(array: Array<string>) {
+	if (!array.length) return;
+	return array.reduce((a, b) => (a.length > b.length ? a : b));
+}
+
+/**
+ * sum the numeric values of an array ignoring the undefined values
+ * @param array
+ * @returns sum
+ */
+export function sum(array: Array<number | undefined>) {
+	return array.reduce<number>((acc, curr) => acc + (curr ?? 0), 0);
+}
+
+/**
+ * get a random item of an array
+ * @param array
+ * @returns random item of an array
+ */
+export function randomItemOfArray<T>(array: Array<T>) {
+	return array[(array.length * Math.random()) | 0];
+}

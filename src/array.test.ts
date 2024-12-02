@@ -1,4 +1,13 @@
-import { countDuplicates, filterAttributesWithLessThan, groupBy, range, uniqBy } from './array';
+import {
+	countDuplicates,
+	filterAttributesWithLessThan,
+	getLongestString,
+	groupBy,
+	randomItemOfArray,
+	range,
+	sum,
+	uniqBy
+} from './array';
 
 describe('array', () => {
 	it('range', () => {
@@ -33,5 +42,27 @@ describe('array', () => {
 
 	it('filterAttributesWithLessThan', () => {
 		expect(filterAttributesWithLessThan({ A: 1, B: 1, C: 2 }, 2)).toStrictEqual({ C: 2 });
+	});
+
+	it('getLongestString', () => {
+		expect(getLongestString([])).toStrictEqual(undefined);
+		expect(getLongestString(['azer', 'a', 'z', 'e', 'r'])).toStrictEqual('azer');
+		expect(getLongestString(['a', 'z', 'azer', 'e', 'r'])).toStrictEqual('azer');
+		expect(getLongestString(['a', 'z', 'e', 'r', 'azer'])).toStrictEqual('azer');
+	});
+
+	it('sum', () => {
+		expect(sum([])).toStrictEqual(0);
+		expect(sum([1])).toStrictEqual(1);
+		expect(sum([1, 2, 3, 4])).toStrictEqual(10);
+	});
+
+	it('randomItemOfArray', () => {
+		expect(randomItemOfArray([])).toStrictEqual(undefined);
+		expect(randomItemOfArray([1])).toStrictEqual(1);
+		for (let i = 0; i < 100; i++) {
+			expect(randomItemOfArray([1, 2, 3, 4])).toBeGreaterThanOrEqual(1);
+			expect(randomItemOfArray([1, 2, 3, 4])).toBeLessThanOrEqual(4);
+		}
 	});
 });
