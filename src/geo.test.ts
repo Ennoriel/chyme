@@ -1,3 +1,4 @@
+import { describe, it, expect } from 'vitest';
 import { geoDistance } from './geo';
 
 describe('geo', () => {

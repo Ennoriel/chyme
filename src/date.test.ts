@@ -1,14 +1,16 @@
+import { describe, it, expect, vi, beforeAll, afterAll } from 'vitest';
 import { formatDate, getDefaultDate, isValid, toDate } from './date';
 
 describe('date', () => {
 	const fake_timestamp = 1577836800000;
 
 	beforeAll(() => {
-		jest.useFakeTimers().setSystemTime(new Date('2020-01-01'));
+		vi.useFakeTimers();
+		vi.setSystemTime(new Date('2020-01-01'));
 	});
 
 	afterAll(() => {
-		jest.useRealTimers();
+		vi.useRealTimers();
 	});
 
 	it('isValid', () => {

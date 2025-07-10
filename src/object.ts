@@ -41,14 +41,13 @@ export function deepEqual(a: unknown, b: unknown) {
 			return false;
 		}
 
-		for (i = length; i-- !== 0; ) {
-			if (!Object.prototype.hasOwnProperty.call(b, keys[i])) return false;
+		if (keys.some((key) => !Object.prototype.hasOwnProperty.call(b, key))) {
+			return false;
 		}
 
 		return true;
 	}
 
-	// eslint-disable-next-line no-self-compare
 	return a !== a && b !== b;
 }
 
@@ -58,6 +57,7 @@ export function deepEqual(a: unknown, b: unknown) {
  * @param keys nested property (user.first.name → ["user", "first", "name"])
  * @returns T
  */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function getAttr<T>(object: any, keys: Array<string>): T | undefined {
 	if (!keys.length) return object;
 	try {

@@ -1,3 +1,4 @@
+import { describe, it, expect } from 'vitest';
 import { ensureNonNullable, ensureTruthy } from './boolean';
 
 describe('boolean', () => {

@@ -1,3 +1,4 @@
+import { describe, it, expect } from 'vitest';
 import { ensureFulfilled, ensureRejected, sleep } from './promise';
 
 describe('promise', () => {

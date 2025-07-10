@@ -1,3 +1,4 @@
+import { describe, it, expect, vi } from 'vitest';
 import { getRss } from './rss';
 
 describe('rss', () => {
@@ -55,7 +56,8 @@ describe('rss', () => {
 			'<?xml version="1.0" encoding="UTF-8" ?> <rss version="2.0"> <channel> <title>Machyme blog articles</title> <description>New blog articles</description> <link>https://fake-website.fr/blog/</link> <lastBuildDate>Sun, 10 Jul 2022 15:12:22 GMT</lastBuildDate> <pubDate>Sun, 10 Jul 2022 15:12:22 GMT</pubDate> <ttl>1440</ttl> <item> <title>fake title</title> <link>https://fake-website.fr/blog/blog-article</link> <guid>https://fake-website.fr/blog/blog-article</guid> <pubDate>Sun, 10 Jul 2022 15:12:22 GMT</pubDate> <description>fake content</description> <enclosure type="image/jpg" url="https://fake-website.fr/blog/blog-article.jpg" /> </item> <item> <title>fake title</title> <link>https://fake-website.fr/blog/blog-article</link> <guid>https://fake-website.fr/blog/blog-article</guid> <pubDate>Sun, 10 Jul 2022 15:12:22 GMT</pubDate> <description>fake content</description> <enclosure length="14569" type="image/jpg" url="https://fake-website.fr/blog/blog-article.jpg" /> </item> </channel> </rss>'
 		);
 
-		jest.useFakeTimers().setSystemTime(new Date('2020-01-01'));
+		vi.useFakeTimers();
+		vi.setSystemTime(new Date('2020-01-01'));
 
 		expect(
 			getRss({
@@ -69,6 +71,6 @@ describe('rss', () => {
 			'<?xml version="1.0" encoding="UTF-8" ?> <rss version="2.0"> <channel> <title>Machyme blog articles</title> <description>New blog articles</description> <link>https://fake-website.fr/blog/</link> <lastBuildDate>Wed, 01 Jan 2020 00:00:00 GMT</lastBuildDate> <pubDate>Wed, 01 Jan 2020 00:00:00 GMT</pubDate> <ttl>1440</ttl> </channel> </rss>'
 		);
 
-		jest.useRealTimers();
+		vi.useRealTimers();
 	});
 });
