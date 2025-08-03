@@ -68,7 +68,8 @@ export function getWeekStart(date: Date, weekStartsWith: 'monday' | 'sunday') {
 	return new Date(
 		date.getFullYear(),
 		date.getMonth(),
-		date.getDate() - ((weekDay + 6 + (weekStartsWith === 'monday' ? 0 : 1)) % 7)
+		date.getDate() - ((weekDay + 6 + (weekStartsWith === 'monday' ? 0 : 1)) % 7),
+		0
 	);
 }
 
@@ -82,7 +83,8 @@ export function getWeekEnd(date: Date, weekStartsWith: 'monday' | 'sunday') {
 	return new Date(
 		date.getFullYear(),
 		date.getMonth(),
-		date.getDate() + ((7 - date.getDay() + (weekStartsWith === 'monday' ? 0 : -1)) % 7)
+		date.getDate() + ((7 - date.getDay() + (weekStartsWith === 'monday' ? 0 : -1)) % 7),
+		0
 	);
 }
 
