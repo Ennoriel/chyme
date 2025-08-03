@@ -1,5 +1,12 @@
 # chyme
 
+## 3.2.0
+
+### Minor Changes
+
+- caf513f: switch to vite + vitest and up deps
+- 38073d3: add functions: getWeekStart, getWeekEnd, getNumberOfDays
+
 ## 3.1.0
 
 ### Minor Changes
