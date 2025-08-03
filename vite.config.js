@@ -1,4 +1,4 @@
-import { defineConfig } from 'vitest';
+import { defineConfig } from 'vite';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import dts from 'vite-plugin-dts';

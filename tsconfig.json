@@ -5,7 +5,9 @@
 		"outDir": "dist",
 		"removeComments": true,
 		"target": "ES6",
+		"module": "esnext",
 		"moduleResolution": "node",
-		"exactOptionalPropertyTypes": false
+		"exactOptionalPropertyTypes": false,
+		"resolveJsonModule": true
 	}
 }
